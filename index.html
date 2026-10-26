@@ -1,0 +1,141 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>🧾 Emitir Recibo — Vétus Gestão de Acesso</title>
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header class="header">
+        <img
+          src="image/logo-vetus.png"
+          alt="Vétus Gestão de Acesso"
+          class="logo"
+        />
+        <h1>🧾 Emitir Recibo</h1>
+        <p>Vétus Gestão de Acesso — Área Interna</p>
+      </header>
+
+      <div class="tela">
+        <div class="section">
+          <h2>Dados do Cliente</h2>
+
+          <label for="rec-nome">Nome Completo</label>
+          <input
+            type="text"
+            id="rec-nome"
+            placeholder="Nome completo do cliente"
+            required
+          />
+          <div id="rec-nome-erro" class="erro"></div>
+
+          <div class="label-com-icone">
+            <label for="rec-cpf">CPF</label>
+            <span id="icone-ajuda-cpf" class="icone-ajuda">ℹ️</span>
+          </div>
+          <div id="card-ajuda-cpf" class="card-ajuda oculto">
+            Para emitir recibo, nota fiscal ou qualquer documento oficial, o CPF
+            é obrigatório.<br /><br />
+            Sem ele, não dá para formalizar o serviço corretamente.
+          </div>
+          <input
+            type="text"
+            id="rec-cpf"
+            placeholder="___.___.___-__"
+            maxlength="14"
+            required
+          />
+          <div id="rec-cpf-erro" class="erro"></div>
+
+          <label for="rec-email">E-mail do Cliente</label>
+          <input
+            type="email"
+            id="rec-email"
+            placeholder="cliente@email.com"
+            required
+          />
+          <div id="rec-email-erro" class="erro"></div>
+
+          <label for="rec-whats">WhatsApp do Cliente</label>
+          <input type="text" id="rec-whats" placeholder="(XX) XXXXX-XXXX" />
+          <div id="rec-whats-erro" class="erro"></div>
+
+          <label for="rec-pacote">Pacote</label>
+          <select id="rec-pacote">
+            <option value="">Selecione...</option>
+            <option value="Pacote Básico|45.00">
+              Pacote Básico — R$ 45,00/mês
+            </option>
+            <option value="Pacote Completo|80.00">
+              Pacote Completo — R$ 80,00/mês
+            </option>
+            <option value="Pacote Premium|130.00">
+              Pacote Premium — R$ 130,00/mês
+            </option>
+            <option value="Serviço Avulso|35.00">
+              Serviço Avulso — R$ 35,00
+            </option>
+          </select>
+          <div id="rec-pacote-erro" class="erro"></div>
+
+          <div id="campo-servico-avulso" class="oculto">
+            <label for="rec-servico-desc">Especifique o serviço</label>
+            <textarea
+              id="rec-servico-desc"
+              placeholder="Ex: Consultoria em segurança digital, Auditoria LGPD..."
+              rows="3"
+            ></textarea>
+            <div id="rec-servico-erro" class="erro"></div>
+          </div>
+
+          <label for="rec-forma">Forma de Pagamento</label>
+          <select id="rec-forma">
+            <option value="">Selecione...</option>
+            <option value="PIX">PIX</option>
+            <option value="Transferência Bancária">
+              Transferência Bancária
+            </option>
+            <option value="Dinheiro">Dinheiro</option>
+          </select>
+          <div id="rec-forma-erro" class="erro"></div>
+
+          <label for="rec-obs">Observações (opcional)</label>
+          <input
+            type="text"
+            id="rec-obs"
+            placeholder="Ex: Pagamento confirmado em 26/10/2026"
+          />
+        </div>
+
+        <button class="btn" id="btn-gerar">📄 Gerar Recibo e Baixar</button>
+        <button class="btn btn-whats" id="btn-whatsapp">
+          💬 Enviar por WhatsApp
+        </button>
+        <button class="btn btn-email" id="btn-email">
+          📧 Enviar por E-mail
+        </button>
+        <p
+          id="aviso-email"
+          class="aviso"
+          style="color: green; margin-top: 10px; display: none"
+        >
+          ✅ Programa de e-mail aberto! É só clicar em Enviar
+        </p>
+        <p
+          id="aviso-email-config"
+          class="aviso"
+          style="color: #d4af37; margin-top: 5px; display: none"
+        >
+          ⚠️ Nenhum e-mail configurado. Use a opção Copiar e Colar abaixo
+        </p>
+        <p class="aviso">
+          ⚠️ Use somente após confirmar o recebimento do pagamento.
+        </p>
+      </div>
+    </div>
+
+    <script src="js/app.js"></script>
+  </body>
+</html>
