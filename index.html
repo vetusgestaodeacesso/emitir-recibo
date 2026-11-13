@@ -9,11 +9,10 @@
   <body>
     <div class="container">
       <header class="header">
-        <img
-          src="image/logo-vetus.png"
-          alt="Vétus Gestão de Acesso"
-          class="logo"
-        />
+        <svg class="logo" viewBox="0 0 60 70" role="img" aria-label="Símbolo Vétus">
+          <path d="M30 3 55 14v20c0 15-10 25-25 33C15 59 5 49 5 34V14L30 3Z" fill="#0A2357" stroke="#D4AF37" stroke-width="2.5" />
+          <path d="m17 21 13 27 14-27" fill="none" stroke="#D4AF37" stroke-width="5" stroke-linecap="square" stroke-linejoin="miter" />
+        </svg>
         <h1>🧾 Emitir Recibo</h1>
         <p>Vétus Gestão de Acesso — Área Interna</p>
       </header>
@@ -49,12 +48,21 @@
           />
           <div id="rec-cpf-erro" class="erro"></div>
 
-          <label for="rec-email">E-mail do Cliente</label>
+          <label for="rec-numero">Número do recibo (opcional)</label>
+          <input
+            type="text"
+            id="rec-numero"
+            placeholder="Gerado automaticamente ao emitir"
+          />
+
+          <label for="rec-data">Data do recebimento</label>
+          <input type="date" id="rec-data" />
+
+          <label for="rec-email">E-mail do Cliente (opcional)</label>
           <input
             type="email"
             id="rec-email"
             placeholder="cliente@email.com"
-            required
           />
           <div id="rec-email-erro" class="erro"></div>
 
@@ -101,6 +109,13 @@
           </select>
           <div id="rec-forma-erro" class="erro"></div>
 
+          <label for="rec-comprovante">Referência do comprovante (opcional)</label>
+          <input
+            type="text"
+            id="rec-comprovante"
+            placeholder="Ex: final do código da transação PIX"
+          />
+
           <label for="rec-obs">Observações (opcional)</label>
           <input
             type="text"
@@ -109,7 +124,7 @@
           />
         </div>
 
-        <button class="btn" id="btn-gerar">📄 Gerar Recibo e Baixar</button>
+        <button class="btn" id="btn-gerar">📄 Imprimir / Salvar Recibo em PDF</button>
         <button class="btn btn-whats" id="btn-whatsapp">
           💬 Enviar por WhatsApp
         </button>
@@ -121,14 +136,7 @@
           class="aviso"
           style="color: green; margin-top: 10px; display: none"
         >
-          ✅ Programa de e-mail aberto! É só clicar em Enviar
-        </p>
-        <p
-          id="aviso-email-config"
-          class="aviso"
-          style="color: #d4af37; margin-top: 5px; display: none"
-        >
-          ⚠️ Nenhum e-mail configurado. Use a opção Copiar e Colar abaixo
+          ✅ Rascunho preparado. Confira os dados e clique em Enviar no seu e-mail.
         </p>
         <p class="aviso">
           ⚠️ Use somente após confirmar o recebimento do pagamento.

@@ -29,8 +29,11 @@ body {
 }
 
 .logo {
+    display: block;
+    width: 74px;
+    height: 86px;
     max-width: 100px;
-    margin-bottom: 15px;
+    margin: 0 auto 12px;
 }
 
 .header h1 {
@@ -121,7 +124,9 @@ textarea:focus {
     border-color: #D4AF37;
 }
 
-input.invalido {
+input.invalido,
+select.invalido,
+textarea.invalido {
     border-color: #e74c3c;
 }
 
